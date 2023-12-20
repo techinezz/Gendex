@@ -1,3 +1,15 @@
+.PokemonBg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 800px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.5);
+}
+
 .PokemonImage{
     display: flex;
     justify-content: center;
