@@ -13,6 +13,75 @@ body {
   background-color: #f5f5f5;
 }
 
+.search-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: #fff;
+    box-shadow: 0px 3px 5pc rgba(0,0,0,.2);
+}
+
+.search-form .input-control{
+    position: relative;
+    width: 37rem;
+    margin-left: 2rem;
+}
+
+.search-form .input-control input{
+    width: 100%;
+    height: 3rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1rem 2rem;
+    font-weight: 400;
+    color: #333;
+    transition: all .3s ease-in-out;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.2);
+    outline: none;
+}
+
+.search-form .input-control input:focus{
+    outline: none;
+    border: 2px solid #7263f3;
+}
+
+.search-form .input control input::placeholder{
+    color: #999;
+    opacity: 0.3;
+}
+
+.search-form .input-control button{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #7263f3;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
+}
+
+.search-results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: #fff;
+    box-shadow: 0px 3px 5pc rgba(0,0,0,.2);
+
+}
+
 .all-pokemon{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
