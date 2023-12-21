@@ -30,7 +30,7 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color:rgba(243, 4, 4, 0.486);
+    background: rgba(255, 255, 255, .2);
     border-radius: 10px;
     margin-top: 1rem;
 }
@@ -45,6 +45,8 @@
     color: white;
     text-shadow: 3px 3px 0px rgba(0,0,0,0.10);
     box-shadow: 0px 3px 5px rgba(0,0,0,0.10);
+    border-radius: 5px;
+    background-color: rgba(255, 253, 208, 0.26);
 }
 
 .PokemonInfo{
@@ -74,4 +76,49 @@
     color: #333;
     text-transform: capitalize;
 }
+
+.Popup {
+    position: relative;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,2);
+    background-color: lightcyan;
+    transform: translateX(600px);
+    margin-top: -640px;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.Popup::-webkit-scrollbar {
+    width: 10px;
+}
+
+.Popup::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.Popup::-webkit-scrollbar-thumb {
+    background: lightblue;
+}
+
+.Popup::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.button {
+    transform: translateY(5px);
+    background-color: darkblue;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.Popup .button {
+    margin-top: 10px;
+}
+
 

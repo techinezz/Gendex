@@ -7,6 +7,7 @@ export default function Home() {
 
 
   return <main>
+    <form action="" className="search-form"></form>
     <div className="all-pokemon">
       {allPokemonData ? allPokemonData.map((pokemon) => {
         return <div key={pokemon.id} className="pokemon" onClick={() =>{
