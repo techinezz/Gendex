@@ -55,10 +55,10 @@ function Pokemon() {
 
     const randomColor = cardColors[Math.floor(Math.random() * cardColors.length)];
 
-    // *This div will display the image of the pokemon when you click on the pokemon card */
     return (
         <div className={styles.PokemonBg}>
             {pokemonItem && (
+            //This div will display the image of the pokemon when you click on the pokemon card
             <>
                 <div className={styles.PokemonImage}>
                     <img src={pokemonItem?.sprites?.other?.home.front_default
@@ -79,7 +79,7 @@ function Pokemon() {
                                 })}
                         </div>
                         <div className={styles.PokemonInfoItem}>
-                            <h5>NO.</h5>
+                            <h5>Pokedex NO.</h5>
                             <p>{pokemonItem?.id}</p>
                         </div>
                     </div>
