@@ -144,7 +144,10 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
             
             )
              : (
-                <h1>Loading...</h1>)}
+                <div className="loader">
+                    <loading />
+                </div>
+                )}
         </div>
     );
 }

@@ -23,7 +23,9 @@ export default function Home() {
     return searchResults.map((pokemon) => {
       return <div key={pokemon.id} onClick={() => {
         Router.push(`/pokemon/${pokemon.name}`)
-      }}>{pokemon.name}</div>
+      }}
+      className="pokemon-name"
+      >{pokemon.name}</div>
     });
   };
 
