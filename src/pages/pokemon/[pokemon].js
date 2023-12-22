@@ -13,7 +13,7 @@ function Pokemon() {
         if (pokemon) {
             getPokemon(pokemon);
         }
-    }, []);
+    }, [pokemon]);
 
 // The code below will fetch the locations of the pokemon
 const [locationAreaEncounters, setLocationAreaEncounters] = useState([]);
@@ -92,7 +92,7 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
                             <p>{pokemonItem?.id}</p>
                         </div>
                         <div className={styles.PokemonInfoItem}>
-                            <h5>Tpye:</h5>
+                            <h5>Type:</h5>
                                 {pokemonItem?.types?.map((type) => {
                                     return <p key={type.type.name}>{type.type.name}</p>;
                                 })}

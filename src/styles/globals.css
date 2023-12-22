@@ -72,13 +72,17 @@ body {
 }
 
 .search-results{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
+    position: absolute;
+    height: 14rem;
+    width: 37rem;
+    top: 12%;
+    left: 50%;
+    overflow: auto;
+    transform: translateX(-50%);
+    z-index: 5;
+    padding: 1rem 1.2rem;
+    box-shadow: 3px 4px 15px rgba(0,0,0,.6);
     background-color: #fff;
-    box-shadow: 0px 3px 5pc rgba(0,0,0,.2);
 
 }
 
