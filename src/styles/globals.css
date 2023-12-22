@@ -13,12 +13,21 @@ body {
   background-color: #f5f5f5;
 }
 
+.logo {
+    position: relative;
+    transform: translateX(-2400px);
+    top: 0;
+    right: 0;
+    height: 50px; 
+    width: 50px; 
+  }
+
 .search-form{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     padding: 2rem 0;
     background-color: #fff;
     box-shadow: 0px 3px 5pc rgba(0,0,0,.2);
@@ -28,6 +37,10 @@ body {
     position: relative;
     width: 37rem;
     margin-left: 2rem;
+}
+
+.input-control {
+    transform: translateX(-10px);
 }
 
 .search-form .input-control input{
@@ -48,7 +61,7 @@ body {
 
 .search-form .input-control input:focus{
     outline: none;
-    border: 2px solid #7263f3;
+    border: 2px solid rgba(243, 4, 4, 0.486);
 }
 
 .search-form .input control input::placeholder{
@@ -64,19 +77,18 @@ body {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #7263f3;
+    background-color: rgba(243, 4, 4, 0.486);
     cursor: pointer;
     font-family: inherit;
     font-size: inherit;
     color: #fff;
 }
-
 .search-results{
     position: absolute;
     height: 14rem;
     width: 37rem;
-    top: 12%;
-    left: 50%;
+    top: 10%;
+    left: 88%;
     overflow: auto;
     transform: translateX(-50%);
     z-index: 5;
@@ -102,7 +114,7 @@ body {
 
 .pokemon-name:hover{
     background-color: #f5f5f5;
-    color: #7263f3;
+    color: rgba(243, 4, 4, 0.486);
 }
 
 .all-pokemon{
