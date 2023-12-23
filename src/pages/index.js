@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 export default function Home() {
-  const {allPokemonData, searchResults, getPokemon, loading, realTimeSearch } = useGlobalContext();
+  const {allPokemonData, searchResults, next, getPokemon, loading, realTimeSearch } = useGlobalContext();
 
   const [search, setSearch] = useState("");
 
@@ -58,6 +58,14 @@ export default function Home() {
         </div>
         
       }): <h1>Loading...</h1>}
+    </div>
+
+    <div className="next">
+      {allPokemonData.length > 0 && (
+        <button className="next-btn" onClick={next}>
+          Load More Pokemon &darr;
+        </button>
+      )}
     </div>
 
   </main>

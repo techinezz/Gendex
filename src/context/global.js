@@ -17,13 +17,19 @@ const reducer = (state, action) => {
         case LOADING:
             return { ...state, loading: true };
         case GET_ALL_POKEMON:
-            return { ...state, allPokemon: action.payload, loading: false };
+            return { ...state, allPokemon: action.payload.results, next: action.payload.next, loading: false };
         case GET_POKEMON:
             return { ...state, pokemon: action.payload, loading: false };
         case GET_POKEMON_DATABASE:
             return { ...state, pokemonDataBase: action.payload, loading: false };
         case GET_SEARCH:
             return { ...state, searchResults: action.payload, loading: false };
+        case NEXT:
+            return { 
+                ...state, 
+                allPokemon: [...state.allPokemon, ...action.payload.results], 
+                next: action.payload.next, 
+                loading: false };
     }
 
     return state;
@@ -48,9 +54,9 @@ export const GlobalProvider = ({ children }) => {
 
     const allPokemon = async () => {
         dispatch({ type: "LOADING" });
-        const response = await fetch(`${baseUrl}pokemon?limit=20`);
+        const response = await fetch(`${baseUrl}pokemon?limit=35`);
         const data = await response.json();
-        dispatch({ type: "ALL_POKEMON", payload: data.results });
+        dispatch({ type: "GET_ALL_POKEMON", payload: data});
 
         //fetch pokemon data
         const allPokemonData = [];
@@ -79,6 +85,24 @@ export const GlobalProvider = ({ children }) => {
         dispatch({ type: "GET_POKEMON_DATABASE", payload: data.results });
     };
 
+    //next page
+    const next = async () => {
+        dispatch({ type: "LOADING" });
+        const response = await fetch(state.next);
+        const data = await response.json();
+        dispatch({ type: "NEXT", payload: data });
+
+        //fetch pokemon data from next page and updating the page
+        const newPokemonData = [];
+        for(const pokemon of data.results) {
+            const pokemonResponse = await fetch(pokemon.url);
+            const pokemonData = await pokemonResponse.json();
+            newPokemonData.push(pokemonData);
+        }
+
+        setAllPokemonData([...allPokemonData, ...newPokemonData]);
+    };
+
     //real time search
     const realTimeSearch = debounce(async (search) => {
         dispatch({ type: "LOADING" });
@@ -103,6 +127,7 @@ export const GlobalProvider = ({ children }) => {
             allPokemonData,
             getPokemon,
             realTimeSearch,
+            next,
         }}>
             {children}
             </GlobalContext.Provider>

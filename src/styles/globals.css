@@ -183,3 +183,28 @@ body {
     text-transform: capitalize;
     color: black;
 }
+
+.next{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    padding-bottom: 2rem;
+}
+
+.next button{
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(243, 4, 4, 0.486);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
+}
+
+.next button:hover{
+    background-color: purple;
+    color: #fff;
+}
