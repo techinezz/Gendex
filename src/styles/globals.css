@@ -10,27 +10,29 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  background-color: #f5f5f5;
+  background-color: black;
 }
 
 .logo {
     position: relative;
-    transform: translateX(-2400px);
-    top: 0;
+    transform: translateX(-1080px);
+    top: 100px;
     right: 0;
-    height: 50px; 
-    width: 50px; 
+    height: 220px; 
+    width: 220px; 
   }
+
 
 .search-form{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     padding: 2rem 0;
-    background-color: #fff;
+    background-color: black;
     box-shadow: 0px 3px 5pc rgba(0,0,0,.2);
+    transform: translateY(-20%);
 }
 
 .search-form .input-control{
@@ -61,7 +63,7 @@ body {
 
 .search-form .input-control input:focus{
     outline: none;
-    border: 2px solid rgba(243, 4, 4, 0.486);
+    border: 2px solid rgb(128, 0, 128);
 }
 
 .search-form .input control input::placeholder{
@@ -77,7 +79,7 @@ body {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 8px;
-    background-color: rgba(243, 4, 4, 0.486);
+    background-color: rgb(128, 0, 128);
     cursor: pointer;
     font-family: inherit;
     font-size: inherit;
@@ -87,10 +89,10 @@ body {
     position: absolute;
     height: 14rem;
     width: 37rem;
-    top: 10%;
+    top: 18%;
     left: 88%;
     overflow: auto;
-    transform: translateX(-50%);
+    transform: translateX(-212%);
     z-index: 5;
     padding: 1rem 1.2rem;
     box-shadow: 3px 4px 15px rgba(0,0,0,.6);
@@ -114,7 +116,22 @@ body {
 
 .pokemon-name:hover{
     background-color: #f5f5f5;
-    color: rgba(243, 4, 4, 0.486);
+    color: rgb(128, 0, 128);
+}
+
+.shiny-btn{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(128, 0, 128);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
 }
 
 .all-pokemon{
@@ -152,7 +169,7 @@ body {
     object-fit: contain;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
-    /* background-color: rgba(255, 253, 208, 0.26); */
+    background-color: rgba(255, 255, 255, 0.89);
 }
 
 .all-pokemon .pokemon .card-body{
@@ -162,7 +179,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    background-color:rgba(243, 4, 4, 0.486);
+    background-color: purple;
     border-radius: 10px;
 }
 
@@ -205,6 +222,6 @@ body {
 }
 
 .next button:hover{
-    background-color: purple;
+    background-color: rgb(128, 0, 128);
     color: #fff;
 }

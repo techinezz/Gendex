@@ -2,6 +2,7 @@ import { useGlobalContext } from "../../context/global";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import  styles from "../../styles/Pokemon.module.css";
+import { set } from "lodash";
 
 // This is the page that will display the pokemon when you click on the pokemon card
 function Pokemon() {
@@ -30,6 +31,12 @@ useEffect(() => {
 // This is for the popup to show all the locations of the pokemon
 const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+// This is for the shiny toggle button
+const [isShiny, setIsShiny] = useState(false);
+const toggleShiny = () => {
+    setIsShiny(!isShiny);
+  };
+
 
     let myLink = "";
 
@@ -41,7 +48,6 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
     //Colors for the pokemon cards
     const cardColors = [
         '#FF5733', // Pomegranate
-        '#DAF7A6', // Lime
         '#FFC300', // Saffron
         '#581845', // Plum
         '#C70039', // Red
@@ -49,7 +55,6 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
         '#6C3483', // Amethyst
         '#1B4F72', // Ocean Blue
         '#17202A', // Night
-        '#F4D03F', // Yellow
         '#2ECC71', // Emerald
         '#3498DB', // Peter River
         '#E74C3C', // Alizarin
@@ -60,19 +65,20 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
         '#2980B9', // Belize Hole
         '#8E44AD', // Wisteria
         '#2C3E50', // Midnight Blue
-        '#F39C12', // Orange
         '#D35400', // Pumpkin
         '#C0392B', // Pomegranate
-        '#BDC3C7', // Silver
         '#7F8C8D'  // Asbestos
     ];
 
-    const randomColor = cardColors[Math.floor(Math.random() * cardColors.length)];
+    const [cardColor, setCardColor] = useState('');
 
-
+    useEffect(() => {
+        const randomColor = cardColors[Math.floor(Math.random() * cardColors.length)];
+        setCardColor(randomColor);
+    } , []);
     return (
         <div className={styles.PokemonBg} style={{
-            backgroundColor: !loading && randomColor,
+            backgroundColor: !loading && cardColor,
         
         }}
         >
@@ -80,9 +86,11 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
             //This div will display the image of the pokemon when you click on the pokemon card
             <>
                 <div className={styles.PokemonImage}>
-                    <img src={pokemonItem?.sprites?.other?.home.front_default
-                    ? pokemonItem?.sprites?.other?.home.front_default : myLink 
-                    } alt={pokemonItem.name} />
+                <button className="shiny-btn" onClick={toggleShiny}>Toggle Shiny Form</button>
+                <img src={isShiny ? 
+                pokemonItem?.sprites?.other?.home.front_shiny? pokemonItem?.sprites?.other?.home.front_shiny : myLink
+                : 
+                pokemonItem?.sprites?.other?.home.front_default? pokemonItem?.sprites?.other?.home.front_default : myLink } alt="Pokemon Image" />
                 </div>
                 <div className={styles.PokemonBody}>
                     <h2>{pokemonItem?.name}</h2>
