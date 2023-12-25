@@ -32,7 +32,7 @@ export default function Home() {
 
   return <main>
     <form action="" className="search-form" onSubmit={handleSearch}>
-      <img src="/GengarLogo.jpg" alt="Logo" className="logo" />
+      <img src="/GengarLogo.jpg" alt="Logo" className="logo"/>
       <div className="input-control">
         <input type="text" placeholder="Search Pokemon.." value={search} onChange={handleChange} />
         <button className="submit-btn" type="submit">
