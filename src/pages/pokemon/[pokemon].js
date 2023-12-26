@@ -87,6 +87,7 @@ const toggleShiny = () => {
             <>
                 <div className={styles.PokemonImage}>
                 <button className="shiny-btn" onClick={toggleShiny}>Toggle Shiny Form</button>
+                {/* We check if the pokemon has a shiny form, if not we will display the normal form */}
                 <img src={isShiny ? 
                 pokemonItem?.sprites?.other?.home.front_shiny? pokemonItem?.sprites?.other?.home.front_shiny : myLink
                 : 
