@@ -97,10 +97,10 @@ body {
     position: absolute;
     height: 14rem;
     width: 37rem;
-    top: 18%;
+    top: 31.7%;
     left: 88%;
     overflow: auto;
-    transform: translateX(-212%);
+    transform: translateX(-214.3%);
     z-index: 5;
     padding: 1rem 1.2rem;
     box-shadow: 3px 4px 15px rgba(0,0,0,.6);
