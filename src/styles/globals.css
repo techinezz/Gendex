@@ -249,3 +249,14 @@ body {
       display: none;
     }
   }
+/* Customizing the scrollbar track (background) */
+::-webkit-scrollbar {
+    width: 10px; 
+}
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 4px; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: purple;
+}
