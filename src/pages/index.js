@@ -31,8 +31,8 @@ export default function Home() {
 
 
   return <main>
+    <img src="/GengarLogo.jpg" alt="Logo" className="logo"/>
     <form action="" className="search-form" onSubmit={handleSearch}>
-      <img src="/GengarLogo.jpg" alt="Logo" className="logo"/>
       <div className="logo-name">
         <h1>Gendex</h1>
       </div>
