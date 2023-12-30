@@ -21,7 +21,14 @@ body {
     height: 220px; 
     width: 220px; 
   }
-
+.logo-name{
+    color: purple;
+    font-size: 60px;
+    font-family: 'Lilita One', cursive;
+    position: relative;
+    margin-bottom: 30px;
+    transform: translateY(-70px);
+}
 
 .search-form{
     position: relative;
